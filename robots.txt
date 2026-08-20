@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://zgtong14.github.io/Buaa-lab/sitemap.xml
