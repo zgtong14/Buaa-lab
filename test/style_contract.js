@@ -65,9 +65,47 @@ if (/gem 'al_math',\s*:git =>/.test(gemfile)) {
   failures.push("`Gemfile` must not use git-branch pin for `al_math`; use released gem version.");
 }
 
+// This site (a user site created from the al-folio template, not the
+// al-folio starter itself) legitimately owns local files in these
+// gem-owned directories — either shadowing a gem file (header.liquid,
+// bib.liquid) or brand new site-specific includes with no gem counterpart
+// (the single-scroll homepage's per-section includes) — see
+// docs/ARCHITECTURE.md#local-overrides-your-site-vs-this-repo. Each file
+// must be declared here so the check still catches anything undeclared
+// landing in these directories by accident.
+const KNOWN_LOCAL_OVERRIDES = new Set([
+  "_includes/header.liquid",
+  "_layouts/bib.liquid",
+  "_layouts/about.liquid",
+  "_includes/members-section.liquid",
+  "_includes/research-cards.liquid",
+  "_includes/project-showcase.liquid",
+  "_includes/join-us-content.liquid",
+  "_includes/members/member_tong.md",
+  "_includes/members/member_hanbin.md",
+  "_includes/members/member_yutong.md",
+]);
+
 for (const forbiddenPath of ["_includes", "_layouts", "_sass", "_scripts", "assets/tailwind", "tailwind.config.js", "assets/webfonts"]) {
-  if (exists(forbiddenPath)) {
-    failures.push(`Starter must not own core component path \`${forbiddenPath}\`; move ownership to the corresponding gem.`);
+  if (!exists(forbiddenPath)) continue;
+  const stat = fs.statSync(path.join(root, forbiddenPath));
+  if (!stat.isDirectory()) {
+    if (!KNOWN_LOCAL_OVERRIDES.has(forbiddenPath)) {
+      failures.push(`Starter must not own core component path \`${forbiddenPath}\`; move ownership to the corresponding gem.`);
+    }
+    continue;
+  }
+  const walk = (dir) =>
+    fs.readdirSync(path.join(root, dir), { withFileTypes: true }).flatMap((entry) => {
+      const relPath = path.join(dir, entry.name);
+      return entry.isDirectory() ? walk(relPath) : [relPath];
+    });
+  for (const relPath of walk(forbiddenPath)) {
+    if (!KNOWN_LOCAL_OVERRIDES.has(relPath)) {
+      failures.push(
+        `Starter must not own core component path \`${relPath}\`; move ownership to the corresponding gem, or add it to KNOWN_LOCAL_OVERRIDES if it's a deliberate local override.`
+      );
+    }
   }
 }
 

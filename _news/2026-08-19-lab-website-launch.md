@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-The BUAA iPES Lab website is now online.
+<span class="lang-en">The BUAA BiPES Lab website is now online.</span><span class="lang-zh">北航集成功率电子与系统实验室网站正式上线。</span>

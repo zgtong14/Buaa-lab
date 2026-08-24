@@ -1,0 +1,18 @@
+- align: right
+  image: PI-Zhiguo.jpg
+  content: members/member_tong.md
+  image_circular: false
+  more_info: >
+    <p><span class='lang-en'>Principal Investigator</span><span class='lang-zh'>负责人</span></p>
+- align: left
+  image: Member-Hanbin.jpg
+  content: members/member_hanbin.md
+  image_circular: false
+  more_info: >
+    <p><span class='lang-en'>Ph.D. Student (2026– )</span><span class='lang-zh'>博士研究生（2026– ）</span></p>
+- align: right
+  image: Member-Yutong.jpg
+  content: members/member_yutong.md
+  image_circular: false
+  more_info: >
+    <p><span class='lang-en'>M.Sc. Student</span><span class='lang-zh'>硕士研究生</span></p>

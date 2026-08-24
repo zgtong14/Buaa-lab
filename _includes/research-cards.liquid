@@ -1,0 +1,76 @@
+<!--
+  Photos in assets/img/research/ are free-to-use stock photos from Pexels
+  (pexels.com/license — free for commercial use, no attribution required),
+  standing in until real lab/equipment photos replace them. Swap the files at
+  the same paths whenever real photos are ready; no markup change needed.
+-->
+<div class="row row-cols-1 row-cols-md-2 g-4 mt-2">
+  <div class="col">
+    <img src="{{ '/assets/img/research/power-delivery.jpg' | relative_url }}" class="img-fluid rounded z-depth-1" alt="Data center power delivery">
+    <h4 class="mt-3">
+      <span class="lang-en">Data Center Power Delivery</span>
+      <span class="lang-zh">数据中心供电技术</span>
+    </h4>
+    <p class="lang-en">
+      High-performance computing chips demand ever-larger currents at ever-lower voltages, while data center racks distribute power at 48 V (and
+      higher) for efficiency. We design hybrid DC-DC converters and multiphase power-delivery architectures that bridge this gap with high power
+      density and high conversion efficiency, targeting rack-to-chip and on-package power delivery for CPUs, GPUs, and other compute accelerators.
+    </p>
+    <p class="lang-zh">
+      高性能计算芯片需要在更低电压下提供更大电流，而数据中心机柜通常以 48 V 及以上电压配电以提高效率。我们设计高效率、高密度的混合型 DC-DC
+      变换器与多相电源变换架构，衔接机柜级配电与芯片级供电，服务于 CPU、GPU 等计算加速芯片的机架到芯片（rack-to-chip）及封装内供电需求。
+    </p>
+  </div>
+
+  <div class="col">
+    <img
+      src="{{ '/assets/img/research/robot-actuator.jpg' | relative_url }}"
+      class="img-fluid rounded z-depth-1"
+      alt="Robot joint motor drive circuits"
+    >
+    <h4 class="mt-3">
+      <span class="lang-en">Robot Joint Motor Drive Circuits</span>
+      <span class="lang-zh">机器人关节电机驱动电路</span>
+    </h4>
+    <p class="lang-en">
+      Humanoid and legged robots pack dozens of joint actuators into a tightly constrained volume and mass budget, and rely on a high-voltage power
+      backbone to keep transmission losses low. We develop power delivery cables and motor-drive power stages that step high-voltage bus power down
+      efficiently at each joint, improving power density and thermal margin for robot actuators.
+    </p>
+    <p class="lang-zh">
+      人形/腿式机器人需要在极为有限的体积和重量预算内集成数十个关节驱动单元，并依赖高压母线降低传输损耗。我们研发用于机器人的高压电源传输线缆与关节电机驱动电源级，在每个关节处高效地将高压母线电压降压变换，提升关节驱动单元的功率密度与散热裕量。
+    </p>
+  </div>
+
+  <div class="col">
+    <img src="{{ '/assets/img/research/rad-hard.jpg' | relative_url }}" class="img-fluid rounded z-depth-1" alt="Radiation-hardened power circuits">
+    <h4 class="mt-3">
+      <span class="lang-en">Radiation-Hardened Power Circuits</span>
+      <span class="lang-zh">抗辐照电源电路</span>
+    </h4>
+    <p class="lang-en">
+      Power electronics for satellites and other aerospace platforms must keep operating reliably in radiation environments that would upset or
+      degrade commercial-grade circuits. We investigate radiation-tolerant power converter topologies and circuit-level hardening techniques for
+      on-board power management in space and aerospace applications.
+    </p>
+    <p class="lang-zh">
+      卫星等航天平台上的电源电路，需要在会导致商用级电路发生单粒子翻转或性能退化的辐射环境下持续可靠工作。我们研究面向星载及航空航天电源管理的抗辐照变换器拓扑与电路级加固技术。
+    </p>
+  </div>
+
+  <div class="col">
+    <img src="{{ '/assets/img/research/ai-chip.jpg' | relative_url }}" class="img-fluid rounded z-depth-1" alt="AI-assisted power chip design">
+    <h4 class="mt-3">
+      <span class="lang-en">AI-Assisted Power Chip Design</span>
+      <span class="lang-zh">AI 辅助电源芯片设计</span>
+    </h4>
+    <p class="lang-en">
+      Power IC design involves navigating a large, tightly coupled space of topology, component sizing, and layout choices. We explore
+      machine-learning-assisted methods for design-space exploration and parameter optimization, aiming to shorten the design cycle for power
+      management integrated circuits.
+    </p>
+    <p class="lang-zh">
+      电源芯片设计需要在拓扑选择、器件参数与版图布局等高度耦合的设计空间中反复权衡。我们探索基于机器学习辅助的设计空间搜索与参数优化方法，力图缩短电源管理集成电路的设计周期。
+    </p>
+  </div>
+</div>

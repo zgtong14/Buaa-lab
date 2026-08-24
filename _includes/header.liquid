@@ -1,0 +1,140 @@
+<!--
+  Local override of al_folio_core's header.liquid, kept in sync with the
+  gem-rendered markup (see docs/ARCHITECTURE.md#local-overrides-your-site-vs-this-repo).
+  Changes vs. upstream: the #lang-toggle button/list item, the
+  lang-toggle/typography-override/venue-logo/brand-color asset tags, and the
+  nav itself — the site is a single scrolling homepage (see _pages/about.md),
+  so nav links are hardcoded anchors into that page (`/#members` etc.)
+  instead of the upstream loop over `site.pages`. The standalone pages under
+  each of those anchors (_pages/profiles.md, research.md, etc.) still exist
+  and still render at their own URLs for deep-linking/sharing — they're just
+  no longer in the nav. Re-run `bundle exec al-folio upgrade overrides diff
+  _includes/header.liquid` after bumping al_folio_core to catch upstream
+  drift.
+-->
+<link rel="stylesheet" href="{{ '/assets/css/lang-toggle.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/typography-override.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/venue-logo.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/brand-color.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/scroll-nav.css' | relative_url }}">
+<script src="{{ '/assets/js/lang-toggle.js' | relative_url }}"></script>
+<header>
+  <!-- Nav Bar -->
+  <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation">
+    <div class="container">
+      {% if page.permalink != '/' %}
+        <a class="navbar-brand title font-weight-lighter" href="{{ site.baseurl }}/">
+          {% if site.title == 'blank' %}
+            {% if site.first_name %}
+              <span class="font-weight-bold">
+                {{- site.first_name -}}
+              </span>
+            {% endif %}
+            {% if site.middle_name %}
+              {{- site.middle_name -}}
+            {% endif %}
+            {% if site.last_name %}
+              {{- site.last_name -}}
+            {% endif %}
+          {% else %}
+            {{- site.title -}}
+          {% endif %}
+        </a>
+      {% elsif site.enable_navbar_social %}
+        <!-- Social Icons -->
+        <div class="navbar-brand social">{% include social.liquid %}</div>
+      {% endif %}
+      <!-- Navbar Toggle -->
+      <button
+        class="navbar-toggler collapsed navbar-toggler-main"
+        type="button"
+        data-nav-toggle="navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+
+      <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav">
+        <ul class="navbar-nav navbar-menu-list flex-nowrap">
+          <!--
+            Single-scroll nav: every item is an anchor on the homepage.
+            From any other page (e.g. /publications/, direct-linked) the
+            browser loads '/' and then jumps to the anchor, same as any
+            normal in-page anchor link.
+          -->
+          <li class="nav-item {% if page.permalink == '/' %}active{% endif %}">
+            <a class="nav-link" href="{{ '/' | relative_url }}">
+              <span class="lang-en">about</span><span class="lang-zh">关于</span>
+              {% if page.permalink == '/' %}
+                <span class="sr-only">(current)</span>
+              {% endif %}
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ '/' | relative_url }}#research">
+              <span class="lang-en">research</span><span class="lang-zh">研究方向</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ '/' | relative_url }}#news"> <span class="lang-en">news</span><span class="lang-zh">新闻动态</span> </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ '/' | relative_url }}#members"> <span class="lang-en">members</span><span class="lang-zh">成员</span> </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ '/' | relative_url }}#projects">
+              <span class="lang-en">projects</span><span class="lang-zh">项目展示</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ '/' | relative_url }}#publications">
+              <span class="lang-en">publications</span><span class="lang-zh">论文发表</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ '/' | relative_url }}#join-us">
+              <span class="lang-en">join us</span><span class="lang-zh">加入我们</span>
+            </a>
+          </li>
+          {% if site.search_enabled %}
+            <!-- Search -->
+            <li class="nav-item">
+              <button id="search-toggle" type="button" title="Search" aria-label="Open search">
+                <span class="nav-link">⌘ k <i class="fa-solid fa-magnifying-glass"></i></span>
+              </button>
+            </li>
+          {% endif %}
+          <!-- Language toggle -->
+          <li class="nav-item">
+            <button id="lang-toggle" type="button" title="Switch language / 切换语言" aria-label="Switch language">
+              <span class="nav-link" id="lang-toggle-label">中文</span>
+            </button>
+          </li>
+          {% if site.enable_darkmode %}
+            <!-- Toogle theme mode -->
+            <li class="toggle-container">
+              <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme">
+                <i class="fa-half-sun-moon" id="light-toggle-system"></i>
+                <i class="fa-solid fa-moon" id="light-toggle-dark"></i>
+                <i class="fa-solid fa-sun" id="light-toggle-light"></i>
+              </button>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+  {% if site.enable_progressbar %}
+    <!-- Scrolling Progress Bar -->
+    <progress id="progress" value="0">
+      <div class="progress-container">
+        <span class="progress-bar"></span>
+      </div>
+    </progress>
+  {% endif %}
+</header>

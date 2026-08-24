@@ -1,9 +1,40 @@
-"AJP":
-  url: https://aapt.scitation.org/journal/ajp
-  color: "#00369f"
+"ISSCC":
+  url: https://www.isscc.org/
+  color: "#0a3161"
+  logo: /assets/img/venues/isscc.png
 
-"PhysRev":
-  url: https://journals.aps.org/
+"JSSC":
+  url: https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=4
+  color: "#c8102e"
+  logo: /assets/img/venues/jssc.jpeg
 
-"Vision":
-  color: "#009f36"
+"VLSI Symp.":
+  url: https://www.vlsisymposium.org/
+  logo: /assets/img/venues/vlsi.png
+
+"CICC":
+  url: https://ieee-cicc.org/
+
+"APEC":
+  url: https://www.apec-conf.org/
+
+"ISCAS":
+  url: https://ieee-iscas.org/
+
+"OJSSCS":
+  url: https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8782712
+
+"ICTA":
+  url: https://ieeexplore.ieee.org/xpl/conhome/1802429/all-proceedings
+
+"TCAS-I":
+  url: https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8919
+
+"TPEL":
+  url: https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=63
+
+"A-SSCC":
+  url: https://a-sscc.org/
+
+"ICSICT":
+  url: https://ieeexplore.ieee.org/xpl/conhome/1000922/all-proceedings
