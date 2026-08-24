@@ -1,0 +1,18 @@
+current directory: /Users/chealkeo/Desktop/Buaa-lab/vendor/bundle/ruby/3.3.0/gems/racc-1.8.1/ext/racc/cparse
+/Users/chealkeo/.rbenv/versions/3.3.5/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/chealkeo/Desktop/Buaa-lab/vendor/bundle/ruby/3.3.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20260820-62526-p0idgd sitelibdir\=./.gem.20260820-62526-p0idgd clean
+
+current directory: /Users/chealkeo/Desktop/Buaa-lab/vendor/bundle/ruby/3.3.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20260820-62526-p0idgd sitelibdir\=./.gem.20260820-62526-p0idgd
+compiling cparse.c
+linking shared-object racc/cparse.bundle
+
+current directory: /Users/chealkeo/Desktop/Buaa-lab/vendor/bundle/ruby/3.3.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20260820-62526-p0idgd sitelibdir\=./.gem.20260820-62526-p0idgd install
+/usr/bin/install -c -m 0755 cparse.bundle ./.gem.20260820-62526-p0idgd/racc
+
+current directory: /Users/chealkeo/Desktop/Buaa-lab/vendor/bundle/ruby/3.3.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20260820-62526-p0idgd sitelibdir\=./.gem.20260820-62526-p0idgd clean
