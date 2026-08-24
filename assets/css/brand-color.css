@@ -1,0 +1,15 @@
+/* al_folio_core drives every accent (nav highlight, links, badges, hover
+   states) off the --global-theme-color / --global-hover-color custom
+   properties defined in _sass/_themes.scss (purple in light mode, cyan in
+   dark mode). Override both to a BUAA-style blue instead.
+   Note: not sampled from an official BUAA VI hex — swap in the exact value
+   if you have brand guidelines. */
+:root {
+  --global-theme-color: #0056b3;
+  --global-hover-color: #003d82;
+}
+
+html[data-theme="dark"] {
+  --global-theme-color: #4a90e2;
+  --global-hover-color: #6ba6e8;
+}

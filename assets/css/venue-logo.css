@@ -1,0 +1,14 @@
+.venue-logo {
+  max-width: 140px;
+  max-height: 140px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* JSSC's cover-style logo reads much bigger than the ISSCC/VLSI badge marks
+   at the same max-width, so give it a smaller cap. */
+.venue-logo[src*="jssc"] {
+  max-width: 90px;
+  max-height: 90px;
+}

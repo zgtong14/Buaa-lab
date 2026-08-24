@@ -1,0 +1,57 @@
+/* The theme's body font-family (Tailwind config, upstream of this repo) is
+   Roboto with no CJK fallback, so Chinese text renders in whatever font the
+   browser happens to pick. Keep Roboto for Latin text and add each OS's
+   native CJK font (PingFang SC on macOS, Microsoft YaHei on Windows,
+   Hiragino Sans GB / Noto Sans CJK elsewhere) as explicit fallbacks. */
+body {
+  font-family:
+    Roboto,
+    -apple-system,
+    BlinkMacSystemFont,
+    "PingFang SC",
+    "Hiragino Sans GB",
+    "Microsoft YaHei",
+    "Segoe UI",
+    "Noto Sans CJK SC",
+    sans-serif;
+}
+
+/* al_folio_core's .profile .more-info block hard-codes font-family: monospace
+   (see _sass/_components.scss) — meant for short English contact lines, but
+   unreadable for the longer bilingual bios this site puts there. Same
+   fallback stack as body, so it stops picking an arbitrary monospace font. */
+.profile .more-info {
+  font-family:
+    Roboto,
+    -apple-system,
+    BlinkMacSystemFont,
+    "PingFang SC",
+    "Hiragino Sans GB",
+    "Microsoft YaHei",
+    "Segoe UI",
+    "Noto Sans CJK SC",
+    sans-serif;
+}
+
+/* The theme's Tailwind base styles set body/heading font-weight to 300 and
+   body line-height to 1.5 (see al_folio_core assets/tailwind/app.css). That
+   reads as elegant on thin Latin letterforms, but Chinese glyphs have far
+   more strokes per character, so the same light weight renders faint and
+   hard to read, and the tighter line-height crowds multi-line paragraphs.
+   Bump both — this affects English text too, but 400 is still a normal,
+   non-bold weight, so it doesn't change the site's tone, just its legibility.
+   Left color alone: it's driven by the --global-text-color variable for
+   light/dark mode, and hard-coding a value here would break dark mode. */
+body {
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+}
