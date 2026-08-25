@@ -1,12 +1,23 @@
 <!--
-  Local re-implementation of al_folio_core's _layouts/profiles.liquid card
-  loop, extracted into an include so it can be dropped into both the
-  standalone /members/ page and the single-scroll homepage. Reads from
+  Re-implementation of al_folio_core's _layouts/profiles.liquid card loop,
+  extracted into an include so it can be dropped into both the standalone
+  /members/ page and the single-scroll homepage. Reads from
   _data/members.yml (this repo's own data file) instead of page front
   matter, and uses `include` instead of `include_relative` since the member
   bio fragments live in _includes/members/, not next to the caller.
+
+  Layout: the PI renders full-width in the original alternating photo/bio
+  style (one person, lots of detail, deserves the space). Everyone else is
+  grouped by `level` — phd / msc / ug, in that order, skipping any group with
+  no members — into a 3-per-row grid so the section stays scannable as the
+  roster grows instead of turning into a long scroll of full bios. Each
+  grid card shows photo + name + one-line role, with the full bilingual bio
+  tucked behind a native <details> disclosure so cards start at a uniform
+  height.
 -->
-{% for profile in site.data.members %}
+
+{% assign pi_members = site.data.members | where: 'level', 'pi' %}
+{% for profile in pi_members %}
   <hr>
   <div class="profile float-{% if profile.align == 'left' %}left{% else %}right{% endif %}" markdown="0">
     {% if profile.image %}
@@ -30,4 +41,43 @@
       {{ profile_content | markdownify }}
     {% endif %}
   </div>
+{% endfor %}
+
+{% capture grid_sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 48 | divided_by: 3 }}px, (min-width: 576px) 45vw, 90vw{% endcapture %}
+
+{% assign member_levels = 'phd|msc|ug' | split: '|' %}
+{% assign level_labels_en = 'Ph.D. Students|M.Sc. Students|Undergraduate Students' | split: '|' %}
+{% assign level_labels_zh = '博士研究生|硕士研究生|本科生' | split: '|' %}
+
+{% for level in member_levels %}
+  {% assign group = site.data.members | where: 'level', level %}
+  {% if group.size > 0 %}
+    {% assign level_index = forloop.index0 %}
+    <h3 class="member-group-heading">
+      <span class="lang-en">{{ level_labels_en[level_index] }}</span><span class="lang-zh">{{ level_labels_zh[level_index] }}</span>
+    </h3>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 member-grid">
+      {% for profile in group %}
+        <div class="col">
+          <div class="member-card">
+            {% if profile.image %}
+              {% assign profile_image_path = profile.image | prepend: 'assets/img/' %}
+              {% include figure.liquid path=profile_image_path class="member-card-photo" sizes=grid_sizes alt=profile.name_en %}
+            {% endif %}
+            <h4 class="member-card-name">
+              <span class="lang-en">{{ profile.name_en }}</span><span class="lang-zh">{{ profile.name_zh }}</span>
+            </h4>
+            {% if profile.more_info %}{{ profile.more_info }}{% endif %}
+            {% if profile.content %}
+              <details class="member-card-details">
+                <summary><span class="lang-en">More info</span><span class="lang-zh">更多信息</span></summary>
+                {% capture profile_content %}{% include {{ profile.content }} %}{% endcapture %}
+                <div class="member-card-bio">{{ profile_content | markdownify }}</div>
+              </details>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
 {% endfor %}

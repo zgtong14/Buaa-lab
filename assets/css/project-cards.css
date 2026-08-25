@@ -1,0 +1,40 @@
+/* Project card media/text split.
+
+   The cards keep .col-md-4 / .col-md-8 in the markup because those are real
+   classes in al_folio_core's bootstrap-compat layer, which only ships
+   col-md-2/3/4/6/8/10/12 — there is no col-md-5 or col-md-7 to step up to.
+   Overriding the flex basis here gives the chip/system photos a wider column
+   (and pushes the text further right) at any ratio, without depending on a
+   grid class the theme does not define.
+
+   If these numbers change, update `proj_thumb_sizes` in
+   _includes/project-showcase.liquid to match — that attribute tells the
+   browser which webp width to pull, and a stale value renders the photos
+   soft. */
+
+@media (min-width: 768px) {
+  .card-body .row > .proj-media {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  .card-body .row > .proj-text {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+/* Bottom-align the chip/system pair. The two photos have different aspect
+   ratios, so at equal widths they render at unequal heights; with the default
+   stretch alignment each photo hugs the top of its cell and the two captions
+   end up on different lines. Aligning the cells to the end lines the captions
+   up, which in turn lines up the bottom edges of the photos. */
+.proj-media > .row {
+  align-items: flex-end;
+}
+
+/* Caption sits at 14px from the theme; the chip/system labels read too small
+   against the 16px body text next to them. */
+.proj-media .caption {
+  font-size: 1rem;
+}

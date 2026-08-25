@@ -55,3 +55,12 @@ h5,
 h6 {
   font-weight: 400;
 }
+
+/* The theme sizes nearly everything in rem off the root font-size (browser
+   default 16px), so bumping it here scales body text, headings, nav links,
+   and rem-based spacing together in one place, rather than nudging each
+   element's font-size individually and having them drift out of proportion
+   with each other. */
+html {
+  font-size: 17.5px;
+}

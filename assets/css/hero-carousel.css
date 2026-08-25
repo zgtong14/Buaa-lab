@@ -1,0 +1,171 @@
+/* Homepage hero carousel. Markup: _includes/hero-carousel.liquid,
+   behaviour: assets/js/hero-carousel.js, slides: _data/carousel.yml. */
+
+.hero-carousel {
+  position: relative;
+  margin: 0 0 2rem;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--hero-carousel-bg);
+}
+
+/* Fixed 16:9 box so slides of differing aspect ratios cannot make the page
+   jump as the carousel advances. */
+.hero-carousel-viewport {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+}
+
+.hero-slide.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* figure.liquid wraps the image in <picture>; both it and the <img> need to
+   fill the slide, and the img needs cover-cropping to the 16:9 box. */
+.hero-slide picture,
+.hero-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-slide img {
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.hero-slide-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 3rem 1.25rem 1.1rem;
+  color: #fff;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.45) 55%, rgba(0, 0, 0, 0) 100%);
+}
+
+/* --- controls ------------------------------------------------------------ */
+
+.hero-carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+  font-size: 1.75rem;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0;
+  transition:
+    opacity 0.2s ease,
+    background-color 0.2s ease;
+}
+
+/* Reveal the arrows on hover, but keep them permanently visible for keyboard
+   and touch users, who get no hover state to trigger. */
+.hero-carousel:hover .hero-carousel-nav,
+.hero-carousel-nav:focus-visible {
+  opacity: 1;
+}
+
+@media (hover: none) {
+  .hero-carousel-nav {
+    opacity: 1;
+  }
+}
+
+.hero-carousel-nav:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.hero-carousel-nav:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.hero-carousel-prev {
+  left: 0.75rem;
+}
+
+.hero-carousel-next {
+  right: 0.75rem;
+}
+
+.hero-carousel-dots {
+  position: absolute;
+  right: 1rem;
+  bottom: 0.9rem;
+  z-index: 2;
+  display: flex;
+  gap: 0.4rem;
+}
+
+.hero-carousel-dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.hero-carousel-dot.is-active {
+  background: #fff;
+}
+
+.hero-carousel-dot:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* Crossfading a full-bleed photo is exactly the kind of motion this query is
+   meant to suppress; the JS separately stops autoplay. */
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide {
+    transition: none;
+  }
+}
+
+@media (max-width: 575px) {
+  .hero-slide-caption {
+    padding: 2rem 0.9rem 0.9rem;
+    font-size: 0.9rem;
+  }
+
+  .hero-carousel-nav {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.4rem;
+  }
+}
+
+:root {
+  --hero-carousel-bg: #e9edf2;
+}
+
+html[data-theme="dark"] {
+  --hero-carousel-bg: #1f2429;
+}

@@ -1,0 +1,34 @@
+# Homepage hero carousel slides, rendered by _includes/hero-carousel.liquid.
+#
+# Add / remove / reorder entries here — the markup and JS pick up whatever is
+# in this list, so there is nothing else to edit. Fields:
+#   image      - path under assets/img/ (no leading slash)
+#   alt        - alt text, required; describe the photo, not the caption
+#   caption_en - overlay text, English (optional; omit for an uncaptioned slide)
+#   caption_zh - overlay text, Chinese  (optional)
+#
+# NOTE: these four are placeholders reusing the research stock photos, so the
+# carousel is visible and laid out correctly from day one. Replace them with
+# real lab photos — group shots, conference trips, award moments — by dropping
+# files into assets/img/ and pointing the `image:` keys at them. Landscape
+# images work best; each slide is cropped to 16:9.
+
+- image: research/power-delivery.jpg
+  alt: Data center power delivery research
+  caption_en: Data center power delivery — hybrid DC-DC converters from rack to chip
+  caption_zh: 数据中心供电技术 —— 从机架到芯片的混合型 DC-DC 变换器
+
+- image: research/robot-actuator.jpg
+  alt: Robot joint motor drive research
+  caption_en: Robot joint motor drives — high-voltage power delivery for humanoid robots
+  caption_zh: 机器人关节电机驱动 —— 面向人形机器人的高压电源传输
+
+- image: research/rad-hard.jpg
+  alt: Radiation-hardened power circuits research
+  caption_en: Radiation-hardened power circuits for satellite and aerospace platforms
+  caption_zh: 抗辐照电源电路 —— 面向卫星及航空航天平台
+
+- image: research/ai-chip.jpg
+  alt: AI-assisted power chip design research
+  caption_en: AI for Power — machine-learning-assisted power IC design
+  caption_zh: AI for Power —— 机器学习辅助的电源芯片设计

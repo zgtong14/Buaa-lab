@@ -1,18 +1,44 @@
+# Rendered by _includes/members-section.liquid, used on both the homepage
+# #members section and the standalone /members/ page.
+#
+# `level` groups everyone below the PI into the categorized grid: phd | msc |
+# ug (undergraduate). Add more entries at any level — the grid re-flows on
+# its own (3 per row on desktop) and a level with zero members simply doesn't
+# render its heading.
+
 - align: right
+  level: pi
   image: PI-Zhiguo.jpg
+  name_en: Prof. Zhiguo Tong
+  name_zh: 童志国 教授
   content: members/member_tong.md
   image_circular: false
   more_info: >
     <p><span class='lang-en'>Principal Investigator</span><span class='lang-zh'>负责人</span></p>
-- align: left
+
+- level: phd
   image: Member-Hanbin.jpg
+  name_en: Han Bin
+  name_zh: 韩斌
   content: members/member_hanbin.md
   image_circular: false
   more_info: >
     <p><span class='lang-en'>Ph.D. Student (2026– )</span><span class='lang-zh'>博士研究生（2026– ）</span></p>
-- align: right
+
+- level: msc
   image: Member-Yutong.jpg
+  name_en: Tang Yutong
+  name_zh: 唐禹瞳
   content: members/member_yutong.md
   image_circular: false
   more_info: >
     <p><span class='lang-en'>M.Sc. Student</span><span class='lang-zh'>硕士研究生</span></p>
+
+- level: ug
+  image: Member-Fanming.jpg
+  name_en: Qi Fanming
+  name_zh: 齐凡铭
+  content: members/member_fanming.md
+  image_circular: false
+  more_info: >
+    <p><span class='lang-en'>Undergraduate Student</span><span class='lang-zh'>本科生</span></p>

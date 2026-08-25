@@ -1,0 +1,77 @@
+{%- comment -%}
+  Homepage hero carousel. Slides come from _data/carousel.yml; behaviour lives
+  in assets/js/hero-carousel.js and styling in assets/css/hero-carousel.css
+  (both linked from _includes/header.liquid).
+
+  Renders nothing when the data file is empty, so removing every slide removes
+  the carousel rather than leaving an empty box on the page.
+
+  Images go through figure.liquid to pick up the ImageMagick webp srcset — a
+  full-bleed hero is the worst place to ship an unscaled original.
+{%- endcomment -%}
+
+{% if site.data.carousel and site.data.carousel.size > 0 %}
+  {% capture hero_sizes %}(min-width: {{ site.max_width }}) {{ site.max_width }}, 100vw{% endcapture %}
+  <div
+    class="hero-carousel"
+    data-hero-carousel
+    data-interval="5000"
+    role="region"
+    aria-roledescription="carousel"
+    aria-label="Lab highlights / 实验室掠影"
+  >
+    <div class="hero-carousel-viewport">
+      {% for slide in site.data.carousel %}
+        <div
+          class="hero-slide{% if forloop.first %} is-active{% endif %}"
+          data-hero-slide
+          role="group"
+          aria-roledescription="slide"
+          aria-label="{{ forloop.index }} / {{ forloop.length }}"
+          {% unless forloop.first %}
+            aria-hidden="true"
+          {% endunless %}
+        >
+          {% assign slide_path = slide.image | prepend: 'assets/img/' %}
+          {% if forloop.first %}
+            {% include figure.liquid path=slide_path alt=slide.alt sizes=hero_sizes loading="eager" %}
+          {% else %}
+            {% include figure.liquid path=slide_path alt=slide.alt sizes=hero_sizes %}
+          {% endif %}
+          {% if slide.caption_en or slide.caption_zh %}
+            <div class="hero-slide-caption">
+              {% if slide.caption_en -%}
+                <span class="lang-en">{{ slide.caption_en }}</span>
+              {%- endif %}
+              {% if slide.caption_zh -%}
+                <span class="lang-zh">{{ slide.caption_zh }}</span>
+              {%- endif %}
+            </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+
+    {% if site.data.carousel.size > 1 %}
+      <button class="hero-carousel-nav hero-carousel-prev" type="button" data-hero-prev aria-label="Previous slide / 上一张">
+        <span aria-hidden="true">&#8249;</span>
+      </button>
+      <button class="hero-carousel-nav hero-carousel-next" type="button" data-hero-next aria-label="Next slide / 下一张">
+        <span aria-hidden="true">&#8250;</span>
+      </button>
+
+      <div class="hero-carousel-dots" role="tablist" aria-label="Choose slide / 选择幻灯片">
+        {% for slide in site.data.carousel %}
+          <button
+            class="hero-carousel-dot{% if forloop.first %} is-active{% endif %}"
+            type="button"
+            data-hero-dot="{{ forloop.index0 }}"
+            role="tab"
+            aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+            aria-label="Slide {{ forloop.index }} / 第 {{ forloop.index }} 张"
+          ></button>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+{% endif %}

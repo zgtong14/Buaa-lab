@@ -14,9 +14,13 @@
 
 "CICC":
   url: https://ieee-cicc.org/
+  color: "#146710"
+  logo: /assets/img/venues/cicc.jpg
 
 "APEC":
   url: https://www.apec-conf.org/
+  color: "#056651"
+  logo: /assets/img/venues/apec.jpg
 
 "ISCAS":
   url: https://ieee-iscas.org/

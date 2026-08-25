@@ -13,22 +13,29 @@ layout: default
   bumping al_folio_core to catch upstream drift.
 -->
 <div class="post">
+  <!--
+    The visible headline is deliberately gone — the page opens straight into
+    the intro, with the lab name carried by the navbar brand instead. The h1
+    is kept but visually hidden: a page still needs exactly one h1 for
+    screen-reader navigation and for search engines, and dropping it outright
+    would leave the <section> h2s hanging off no top-level heading.
+  -->
   <header class="post-header">
-    <h1 class="post-title">
+    <h1 class="post-title sr-only">
       {% if page.title_zh %}
-        {{ page.title_zh }}
-        {% if page.title_en_full %}
-          <br />
-          <span style="font-size: 0.72em">{{ page.title_en_full }}</span>
-        {% endif %}
+        {{ page.title_zh -}}
+        {%- if page.title_en_full %} — {{ page.title_en_full }}{% endif %}
       {% elsif site.title == 'blank' %}
-        <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
+        {{ site.first_name }}
+        {{ site.middle_name }}
         {{ site.last_name }}
       {% else %}
         {{ site.title }}
       {% endif %}
     </h1>
-    <p class="desc">{{ page.subtitle }}</p>
+    {% if page.subtitle %}
+      <p class="desc">{{ page.subtitle }}</p>
+    {% endif %}
   </header>
 
   <article>

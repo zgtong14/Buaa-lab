@@ -1,6 +1,6 @@
 /* Bilingual content toggle. Pair with assets/js/lang-toggle.js and the
-   `#lang-toggle` button added in _includes/header.liquid. Content is marked
-   up with .lang-en / .lang-zh; the active language is read off
+   `.lang-switch` segmented control added in _includes/header.liquid. Content is
+   marked up with .lang-en / .lang-zh; the active language is read off
    html[data-lang]. Default (before JS runs, or with JS disabled) is English. */
 
 .lang-zh {
@@ -13,4 +13,91 @@ html[data-lang="zh"] .lang-en {
 
 html[data-lang="zh"] .lang-zh {
   display: revert;
+}
+
+/* ---------------------------------------------------------------------------
+   Navbar brand: the lab name, pinned left on every page.
+   --------------------------------------------------------------------------- */
+
+.navbar .lab-brand {
+  font-weight: 700;
+  color: var(--global-theme-color);
+  white-space: nowrap;
+}
+
+.navbar .lab-brand:hover {
+  color: var(--global-hover-color);
+}
+
+/* ---------------------------------------------------------------------------
+   Language switch: two-option segmented control (中文 | EN). The active option
+   is driven by aria-pressed, which assets/js/lang-toggle.js keeps in sync with
+   html[data-lang] — so the styling hook and the accessible state are the same
+   attribute and cannot drift apart.
+   --------------------------------------------------------------------------- */
+
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  border-radius: 999px;
+  background: var(--lang-switch-track);
+  box-shadow: inset 0 0 0 1px var(--lang-switch-edge);
+}
+
+.lang-switch-btn {
+  -webkit-appearance: none;
+  appearance: none;
+  border: 0;
+  margin: 0;
+  padding: 0.2rem 0.8rem;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--lang-switch-fg);
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.5;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.lang-switch-btn:hover {
+  color: var(--global-theme-color);
+}
+
+.lang-switch-btn[aria-pressed="true"] {
+  background: var(--global-theme-color);
+  color: #fff;
+}
+
+.lang-switch-btn[aria-pressed="true"]:hover {
+  background: var(--global-hover-color);
+  color: #fff;
+}
+
+.lang-switch-btn:focus-visible {
+  outline: 2px solid var(--global-theme-color);
+  outline-offset: 2px;
+}
+
+/* Keep the control vertically centred against the text nav items. */
+.nav-item.lang-switch-item {
+  display: flex;
+  align-items: center;
+}
+
+:root {
+  --lang-switch-track: #eef2f8;
+  --lang-switch-edge: rgba(0, 0, 0, 0.06);
+  --lang-switch-fg: #5a6b7f;
+}
+
+html[data-theme="dark"] {
+  --lang-switch-track: rgba(255, 255, 255, 0.08);
+  --lang-switch-edge: rgba(255, 255, 255, 0.12);
+  --lang-switch-fg: #a8b3c1;
 }

@@ -1,0 +1,96 @@
+/* Grouped member grid (phd/msc/ug) in _includes/members-section.liquid.
+   The PI keeps the theme's original full-width profile styling untouched;
+   this file only styles the grid cards below it. */
+
+.member-group-heading {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--global-theme-color);
+}
+
+/* First group heading sits right under the PI's <hr>/bio — no extra push
+   needed there, the PI block already ends with its own spacing. */
+.member-grid:first-of-type,
+.member-group-heading:first-of-type {
+  margin-top: 1.5rem;
+}
+
+.member-card {
+  height: 100%;
+  padding: 1rem;
+  border-radius: 8px;
+  background: var(--global-card-bg, transparent);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* Fixed square crop so a 3-per-row grid stays tidy regardless of each
+   photo's native aspect ratio. figure.liquid wraps the img in <picture>,
+   so both need to fill the frame; only the img gets cropped. */
+.member-card-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.member-card-photo picture,
+.member-card-photo.img-fluid {
+  width: 100%;
+}
+
+.member-card-name {
+  margin: 0.75rem 0 0.15rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.member-card .more-info,
+.member-card p {
+  margin: 0;
+  color: var(--global-text-color-light, #6c757d);
+  font-size: 0.92rem;
+}
+
+.member-card-details {
+  margin-top: 0.6rem;
+}
+
+.member-card-details summary {
+  cursor: pointer;
+  color: var(--global-theme-color);
+  font-size: 0.9rem;
+  font-weight: 600;
+  list-style: none;
+}
+
+.member-card-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.member-card-details summary::before {
+  content: "+ ";
+}
+
+.member-card-details[open] summary::before {
+  content: "\2212 "; /* minus sign */
+}
+
+.member-card-details summary:hover {
+  color: var(--global-hover-color);
+}
+
+.member-card-bio {
+  margin-top: 0.6rem;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.member-card-bio h5,
+.member-card-bio h6 {
+  font-size: 0.88rem;
+  margin-top: 0.9rem;
+  margin-bottom: 0.3rem;
+}

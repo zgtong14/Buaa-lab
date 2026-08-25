@@ -1,9 +1,11 @@
 <!--
   Local override of al_folio_core's header.liquid, kept in sync with the
   gem-rendered markup (see docs/ARCHITECTURE.md#local-overrides-your-site-vs-this-repo).
-  Changes vs. upstream: the #lang-toggle button/list item, the
-  lang-toggle/typography-override/venue-logo/brand-color asset tags, and the
-  nav itself — the site is a single scrolling homepage (see _pages/about.md),
+  Changes vs. upstream: the .lang-switch segmented control list item, the
+  always-on bilingual .lab-brand (upstream swaps the brand for social icons on
+  the about page), the lang-toggle/typography-override/venue-logo/brand-color
+  asset tags, and the nav itself — the site is a single scrolling homepage
+  (see _pages/about.md),
   so nav links are hardcoded anchors into that page (`/#members` etc.)
   instead of the upstream loop over `site.pages`. The standalone pages under
   each of those anchors (_pages/profiles.md, research.md, etc.) still exist
@@ -17,33 +19,25 @@
 <link rel="stylesheet" href="{{ '/assets/css/venue-logo.css' | relative_url }}">
 <link rel="stylesheet" href="{{ '/assets/css/brand-color.css' | relative_url }}">
 <link rel="stylesheet" href="{{ '/assets/css/scroll-nav.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/project-cards.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/hero-carousel.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/member-cards.css' | relative_url }}">
+<script src="{{ '/assets/js/hero-carousel.js' | relative_url }}"></script>
 <script src="{{ '/assets/js/lang-toggle.js' | relative_url }}"></script>
 <header>
   <!-- Nav Bar -->
   <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation">
     <div class="container">
-      {% if page.permalink != '/' %}
-        <a class="navbar-brand title font-weight-lighter" href="{{ site.baseurl }}/">
-          {% if site.title == 'blank' %}
-            {% if site.first_name %}
-              <span class="font-weight-bold">
-                {{- site.first_name -}}
-              </span>
-            {% endif %}
-            {% if site.middle_name %}
-              {{- site.middle_name -}}
-            {% endif %}
-            {% if site.last_name %}
-              {{- site.last_name -}}
-            {% endif %}
-          {% else %}
-            {{- site.title -}}
-          {% endif %}
-        </a>
-      {% elsif site.enable_navbar_social %}
-        <!-- Social Icons -->
-        <div class="navbar-brand social">{% include social.liquid %}</div>
-      {% endif %}
+      <!--
+        Brand mark. Upstream hides it on the about page (`page.permalink == '/'`)
+        and shows navbar social icons there instead; this site is a single
+        scrolling homepage, so the lab name stays pinned left on every page
+        while the anchors sit right. Bilingual via .lang-en/.lang-zh.
+        site.title is no longer read here — it only drives the browser tab.
+      -->
+      <a class="navbar-brand title lab-brand" href="{{ site.baseurl }}/">
+        <span class="lang-en">BiPES Lab</span><span class="lang-zh">集成功率电子与系统实验室 (BiPES)</span>
+      </a>
       <!-- Navbar Toggle -->
       <button
         class="navbar-toggler collapsed navbar-toggler-main"
@@ -76,11 +70,6 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ '/' | relative_url }}#research">
-              <span class="lang-en">research</span><span class="lang-zh">研究方向</span>
-            </a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="{{ '/' | relative_url }}#news"> <span class="lang-en">news</span><span class="lang-zh">新闻动态</span> </a>
           </li>
           <li class="nav-item">
@@ -109,11 +98,12 @@
               </button>
             </li>
           {% endif %}
-          <!-- Language toggle -->
-          <li class="nav-item">
-            <button id="lang-toggle" type="button" title="Switch language / 切换语言" aria-label="Switch language">
-              <span class="nav-link" id="lang-toggle-label">中文</span>
-            </button>
+          <!-- Language switch: segmented control, one button per language. -->
+          <li class="nav-item lang-switch-item">
+            <div class="lang-switch" role="group" aria-label="Switch language / 切换语言">
+              <button class="lang-switch-btn" type="button" data-set-lang="zh" aria-pressed="false">中文</button>
+              <button class="lang-switch-btn" type="button" data-set-lang="en" aria-pressed="false">EN</button>
+            </div>
           </li>
           {% if site.enable_darkmode %}
             <!-- Toogle theme mode -->
