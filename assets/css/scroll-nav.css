@@ -1,13 +1,24 @@
 /* The homepage (_pages/about.md) is a single scrolling page with each nav
-   item pointing at an in-page anchor (#members, #research, ...).
+   item pointing at an in-page anchor (#members, #news, ...).
    scroll-margin-top keeps the fixed navbar from covering the top of
    whichever section was jumped to. (scroll-behavior: smooth was tried here
    but dropped — it couldn't be verified in this environment and a plain,
    reliable jump beats an animation that might silently not run.) */
 #members,
-#research,
 #publications,
 #news,
 #join-us {
   scroll-margin-top: 90px;
+}
+
+/* Single-scroll homepage: give each <section> a bit of daylight so they read
+   as distinct chapters rather than one continuous block, #news included —
+   with #research gone it now sits directly under the intro paragraph, which
+   read as too tight without its own gap. */
+#news,
+#members,
+#projects,
+#publications,
+#join-us {
+  margin-top: 3.5rem;
 }
