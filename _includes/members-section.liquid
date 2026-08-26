@@ -10,10 +10,11 @@
   style (one person, lots of detail, deserves the space). Everyone else is
   grouped by `level` — phd / msc / ug, in that order, skipping any group with
   no members — into a 3-per-row grid so the section stays scannable as the
-  roster grows instead of turning into a long scroll of full bios. Each
-  grid card shows photo + name + one-line role, with the full bilingual bio
-  tucked behind a native <details> disclosure so cards start at a uniform
-  height.
+  roster grows instead of turning into a long scroll of full bios. Each grid
+  card shows photo + name + one-line role + one-line research direction, all
+  visible without interaction; the full bilingual bio (education, honors,
+  hobbies, ...) is tucked behind a native <details> disclosure so cards start
+  at a uniform height.
 -->
 
 {% assign pi_members = site.data.members | where: 'level', 'pi' %}
@@ -33,9 +34,12 @@
     {% if profile.more_info %}
       <div class="more-info">{{ profile.more_info }}</div>
     {% endif %}
+    {% if profile.contact_links %}
+      <div class="profile-links">{{ profile.contact_links }}</div>
+    {% endif %}
   </div>
 
-  <div class="clearfix">
+  <div class="clearfix profile-bio">
     {% if profile.content %}
       {% capture profile_content %}{% include {{ profile.content }} %}{% endcapture %}
       {{ profile_content | markdownify }}
@@ -68,6 +72,12 @@
               <span class="lang-en">{{ profile.name_en }}</span><span class="lang-zh">{{ profile.name_zh }}</span>
             </h4>
             {% if profile.more_info %}{{ profile.more_info }}{% endif %}
+            {% if profile.research_en or profile.research_zh %}
+              <p class="member-card-research">
+                <span class="lang-en"><strong>Research:</strong> {{ profile.research_en }}</span>
+                <span class="lang-zh"><strong>研究方向：</strong>{{ profile.research_zh }}</span>
+              </p>
+            {% endif %}
             {% if profile.content %}
               <details class="member-card-details">
                 <summary><span class="lang-en">More info</span><span class="lang-zh">更多信息</span></summary>

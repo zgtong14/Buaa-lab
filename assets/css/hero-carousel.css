@@ -9,12 +9,23 @@
   background: var(--hero-carousel-bg);
 }
 
-/* Fixed 16:9 box so slides of differing aspect ratios cannot make the page
-   jump as the carousel advances. */
+/* Fixed-ratio box so slides of differing aspect ratios cannot make the page
+   jump as the carousel advances. 16:9 on narrow viewports (a phone-width
+   container already keeps this short in absolute px), widening to a
+   shorter, more banner-like ratio once the container approaches max_width —
+   at 1200px wide, 16:9 stood 658px tall, taller than a 720px-high laptop
+   viewport once the fixed navbar is subtracted, so the homepage opened on
+   nothing but this image. 2.6:1 brings that down to ~450px. */
 .hero-carousel-viewport {
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
+}
+
+@media (min-width: 768px) {
+  .hero-carousel-viewport {
+    aspect-ratio: 2.6 / 1;
+  }
 }
 
 .hero-slide {
