@@ -1,6 +1,23 @@
-/* Grouped member grid (phd/msc/ug) in _includes/members-section.liquid.
-   The PI keeps the theme's original full-width profile styling untouched;
-   this file only styles the grid cards below it. */
+/* Grouped member grid (phd/msc/ug) in _includes/members-section.liquid, plus
+   a couple of small tweaks to the PI's full-width profile block above it
+   (.profile-links, tighter .profile-bio heading spacing) — everything else
+   about the PI block is still the theme's original profile styling. */
+
+/* Contact links under the PI's photo, instead of trailing the bio text at
+   full width below everything. Same spacing rhythm as .more-info above it. */
+.profile-links {
+  margin-top: 0.5rem;
+  font-size: 0.92rem;
+}
+
+/* The bio's Education/Experience/Honors lists were long enough to run well
+   past the photo's height, leaving a lot of empty space beside it. Collapsing
+   each list to one middot-separated line (done at the content level) cut
+   most of that; tightening the heading spacing here trims the rest. */
+.profile-bio h5 {
+  margin-top: 1.1rem;
+  margin-bottom: 0.3rem;
+}
 
 .member-group-heading {
   margin-top: 2.5rem;
@@ -33,7 +50,24 @@
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
+  object-position: 50% 50%;
   border-radius: 6px;
+}
+
+/* Per-photo vertical recentering for a square crop the source photo wasn't
+   shot for. object-position's Y value is where the *image* anchors within
+   the box: lower % crops more off the bottom (reveals more head/top),
+   higher % crops more off the top (reveals more shoulders/bottom). */
+img.member-card-photo[src*="Member-Peiyu"] {
+  /* Portrait shot, default center crop sliced through mid-hair. Anchor near
+     the top so the crop starts at the source's top edge instead. */
+  object-position: 50% 15%;
+}
+
+img.member-card-photo[src*="Member-Jiahao"] {
+  /* Candid outdoor shot with a lot of empty sky above windswept hair;
+     nudge down slightly to trim that sky and bring the face more central. */
+  object-position: 50% 65%;
 }
 
 .member-card-photo picture,
@@ -52,6 +86,21 @@
   margin: 0;
   color: var(--global-text-color-light, #6c757d);
   font-size: 0.92rem;
+}
+
+/* Research direction: unlike more-info (role/year, muted), this is content
+   worth reading at a glance, so it gets the normal text color rather than
+   the `.member-card p` muted-gray default, plus a bit of breathing room
+   above it to separate it from the role line. */
+.member-card-research {
+  margin-top: 0.4rem !important;
+  color: var(--global-text-color) !important;
+  line-height: 1.5;
+}
+
+.member-card-research strong {
+  color: var(--global-theme-color);
+  font-weight: 600;
 }
 
 .member-card-details {
