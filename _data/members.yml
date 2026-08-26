@@ -10,10 +10,12 @@
 # on the grid card (below the role line) — kept short on purpose, since the
 # full write-up already lives in the member's own bio (`content`), reachable
 # via the card's "More info" disclosure.
+#
+# Photos live in assets/img/member/.
 
 - align: right
   level: pi
-  image: PI-Zhiguo.jpg
+  image: member/PI-Zhiguo.jpg
   name_en: Prof. Zhiguo Tong
   name_zh: 童志国 教授
   content: members/member_tong.md
@@ -24,7 +26,7 @@
     <p><a href="mailto:zgtong@buaa.edu.cn">Email</a> &middot; <a href="https://scholar.google.com/citations?user=3_I6bksAAAAJ&hl=en">Google Scholar</a> &middot; <a href="https://www.researchgate.net/profile/Zhiguo-Tong/research">ResearchGate</a> &middot; <a href="https://shi.buaa.edu.cn/tongzhiguo/zh_CN/index.htm">BUAA Homepage</a></p>
 
 - level: phd
-  image: Member-Hanbin.jpg
+  image: member/Member-Hanbin.jpg
   name_en: Han Bin
   name_zh: 韩斌
   content: members/member_hanbin.md
@@ -35,7 +37,7 @@
   research_zh: 电源管理芯片设计，磁耦合无线能量传输。
 
 - level: phd
-  image: Member-Ziyao.jpg
+  image: member/Member-Ziyao.jpg
   name_en: Dang Ziyao
   name_zh: 党子尧
   content: members/member_ziyao.md
@@ -46,7 +48,7 @@
   research_zh: 面向数据中心的供电芯片研究，聚焦 BCMOS 工艺低压大电流多相电路建模与设计。
 
 - level: msc
-  image: Member-Yutong.jpg
+  image: member/Member-Yutong.jpg
   name_en: Tang Yutong
   name_zh: 唐禹瞳
   content: members/member_yutong.md
@@ -56,8 +58,19 @@
   research_en: AI-assisted IC design and radiation-hardened circuit design.
   research_zh: AI 辅助集成电路设计、抗辐射加固电路设计。
 
+- level: msc
+  image: member/Member-Kaixiang.jpg
+  name_en: Zhang Kaixiang
+  name_zh: 张凯翔
+  content: members/member_kaixiang.md
+  image_circular: false
+  more_info: >
+    <p><span class='lang-en'>Incoming M.Sc. Student (2027– )</span><span class='lang-zh'>拟录取硕士研究生（2027– ）</span></p>
+  research_en: Power management chip design; power delivery for AI compute centers.
+  research_zh: 电源管理芯片设计、AI 算力中心供电。
+
 - level: ug
-  image: Member-Fanming.jpg
+  image: member/Member-Fanming.jpg
   name_en: Qi Fanming
   name_zh: 齐凡铭
   content: members/member_fanming.md
@@ -68,7 +81,7 @@
   research_zh: 面向宽禁带半导体的全光驱动与电机驱动芯片。
 
 - level: ug
-  image: Member-Peiyu.jpg
+  image: member/Member-Peiyu.jpg
   name_en: Pei Yu
   name_zh: 裴昱
   content: members/member_peiyu.md
@@ -79,7 +92,7 @@
   research_zh: 高集成度电机驱动芯片 —— 机器人关节电机驱动、机器人灵巧手电机芯片。
 
 - level: ug
-  image: Member-Jiahao.jpg
+  image: member/Member-Jiahao.jpg
   name_en: Wang Jiahao
   name_zh: 王佳豪
   content: members/member_jiahao.md
@@ -88,3 +101,36 @@
     <p><span class='lang-en'>Undergraduate Student</span><span class='lang-zh'>本科生</span></p>
   research_en: AI-assisted power chip design.
   research_zh: AI 辅助电源芯片设计。
+
+- level: ug
+  image: member/Member-Zengyu.jpg
+  name_en: Xia Zengyu
+  name_zh: 夏增瑜
+  content: members/member_zengyu.md
+  image_circular: false
+  more_info: >
+    <p><span class='lang-en'>Undergraduate Student</span><span class='lang-zh'>本科生</span></p>
+  research_en: AI-assisted hybrid integrated circuit design.
+  research_zh: AI 辅助混合集成电路设计。
+
+- level: ug
+  image: member/Member-Shenghang.jpg
+  name_en: Yin Shenghang
+  name_zh: 殷圣航
+  content: members/member_shenghang.md
+  image_circular: false
+  more_info: >
+    <p><span class='lang-en'>Undergraduate Student</span><span class='lang-zh'>本科生</span></p>
+  research_en: Getting started with power management chip design.
+  research_zh: 正在学习电源管理相关方向。
+
+- level: ug
+  image: member/Member-Hengli.jpg
+  name_en: Meng Hengli
+  name_zh: 孟恒立
+  content: members/member_hengli.md
+  image_circular: false
+  more_info: >
+    <p><span class='lang-en'>Undergraduate Student</span><span class='lang-zh'>本科生</span></p>
+  research_en: Wide-bandgap semiconductor gate drive circuits.
+  research_zh: 宽禁带半导体驱动电路。
