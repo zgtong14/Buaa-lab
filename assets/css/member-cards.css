@@ -70,6 +70,19 @@ img.member-card-photo[src*="Member-Jiahao"] {
   object-position: 50% 65%;
 }
 
+img.member-card-photo[src*="Member-Kaixiang"] {
+  /* Same issue as Member-Peiyu: portrait headshot, hair nearly touches the
+     top edge, default center crop would slice through it. */
+  object-position: 50% 15%;
+}
+
+img.member-card-photo[src*="Member-Shenghang"] {
+  /* Full-body travel photo, not a headshot — the face is a small part of a
+     tall frame. Anchoring higher trims excess leg room below and keeps more
+     of the face and torso in the square crop. */
+  object-position: 50% 22%;
+}
+
 .member-card-photo picture,
 .member-card-photo.img-fluid {
   width: 100%;
