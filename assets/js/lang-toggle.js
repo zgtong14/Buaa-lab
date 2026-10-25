@@ -7,7 +7,7 @@
   } catch (e) {
     // Private mode / blocked storage: fall through to the default language.
   }
-  var lang = stored === "zh" || stored === "en" ? stored : "en";
+  var lang = stored === "zh" || stored === "en" ? stored : "zh";
   document.documentElement.setAttribute("data-lang", lang);
 
   // Reflect the active language on the segmented control so the current

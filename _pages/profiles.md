@@ -8,4 +8,6 @@ nav: true
 nav_order: 1
 ---
 
+<div markdown="0">
 {% include members-section.liquid %}
+</div>

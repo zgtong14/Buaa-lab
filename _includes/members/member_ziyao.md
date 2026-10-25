@@ -7,7 +7,7 @@
 ##### Hobbies
 {: #ziyao-hobbies }
 
-Running, traveling, esports. She pursues academic innovation alongside a healthy work-life balance, and welcomes fellow students and researchers to reach out.
+Running, traveling, esports. He pursues academic innovation alongside a healthy work-life balance, and welcomes fellow students and researchers to reach out.
 
 ##### Publications
 {: #ziyao-publications }
