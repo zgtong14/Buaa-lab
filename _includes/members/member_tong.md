@@ -6,7 +6,7 @@ Tenure-track professor and doctoral supervisor, School of Integrated Circuit Sci
 ##### Education and Experience
 {: #tong-education }
 
-Tianjin University, B.E.; Fudan University, M.Sc., advised by [Prof. Zhiliang Hong](https://ic2011.fudan.edu.cn/d3/5e/c29721a316254/page.htm); University of Macau, Ph.D., advised by [Prof. Yan Lu](https://web.ee.tsinghua.edu.cn/luyan/en/index.htm); University of Pennsylvania, Postdoctoral Researcher; University of Macau, Assistant Researcher; Tsinghua University, Visiting Ph.D. Student
+Tianjin University, B.E.; Fudan University, M.Sc., advised by [Prof. Zhiliang Hong](https://ic2011.fudan.edu.cn/d3/5e/c29721a316254/page.htm); University of Macau, Ph.D., advised by [Prof. Yan Lu](https://web.ee.tsinghua.edu.cn/luyan/en/index.htm); Tsinghua University, Visiting Ph.D. Student; University of Macau, Assistant Researcher; University of Pennsylvania, Postdoctoral Researcher
 
 ##### Honors
 {: #tong-honors }
@@ -22,7 +22,7 @@ IEEE SSCS Pre-Doctoral Achievement Award; APEC 2026 Best Presentation Award; Pwr
 ##### 教育及工作经历
 {: #tong-education-zh }
 
-天津大学学士学位；复旦大学硕士学位（导师：[洪志良教授](https://ic2011.fudan.edu.cn/d3/5e/c29721a316254/page.htm)）；澳门大学博士学位（导师：[路延教授](https://web.ee.tsinghua.edu.cn/luyan/en/index.htm)）；宾夕法尼亚大学博士后研究员；澳门大学助理研究员；清华大学访问博士生
+天津大学学士学位；复旦大学硕士学位（导师：[洪志良教授](https://ic2011.fudan.edu.cn/d3/5e/c29721a316254/page.htm)）；澳门大学博士学位（导师：[路延教授](https://web.ee.tsinghua.edu.cn/luyan/en/index.htm)）；清华大学访问博士生；澳门大学助理研究员；宾夕法尼亚大学博士后研究员
 
 ##### 荣誉
 {: #tong-honors-zh }
