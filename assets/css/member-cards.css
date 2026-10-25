@@ -55,6 +55,17 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
+.member-card > figure:has(img[src*="Member-Ziyao-2026"]) {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.member-card > figure:has(img[src*="Member-Ziyao-2026"]) picture {
+  display: block;
+  height: 100%;
+}
+
 /* Fixed square crop so a 3-per-row grid stays tidy regardless of each
    photo's native aspect ratio. figure.liquid wraps the img in <picture>,
    so both need to fill the frame; only the img gets cropped. */
@@ -94,6 +105,11 @@ img.member-card-photo[src*="Member-Shenghang"] {
      tall frame. Anchoring higher trims excess leg room below and keeps more
      of the face and torso in the square crop. */
   object-position: 50% 22%;
+}
+
+img.member-card-photo[src*="Member-Ziyao-2026"] {
+  transform: scale(1.9);
+  transform-origin: 47% 100%;
 }
 
 .member-card-photo picture,

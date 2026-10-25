@@ -1,17 +1,17 @@
 /* Bilingual content toggle. Pair with assets/js/lang-toggle.js and the
    `.lang-switch` segmented control added in _includes/header.liquid. Content is
    marked up with .lang-en / .lang-zh; the active language is read off
-   html[data-lang]. Default (before JS runs, or with JS disabled) is English. */
+   html[data-lang]. Default (before JS runs, or with JS disabled) is Chinese. */
 
-.lang-zh {
+.lang-en {
   display: none;
 }
 
-html[data-lang="zh"] .lang-en {
+html[data-lang="en"] .lang-zh {
   display: none;
 }
 
-html[data-lang="zh"] .lang-zh {
+html[data-lang="en"] .lang-en {
   display: revert;
 }
 
