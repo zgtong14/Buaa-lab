@@ -20,18 +20,6 @@ body {
    (see _sass/_components.scss) — meant for short English contact lines, but
    unreadable for the longer bilingual bios this site puts there. Same
    fallback stack as body, so it stops picking an arbitrary monospace font. */
-.profile .more-info {
-  font-family:
-    Roboto,
-    -apple-system,
-    BlinkMacSystemFont,
-    "PingFang SC",
-    "Hiragino Sans GB",
-    "Microsoft YaHei",
-    "Segoe UI",
-    "Noto Sans CJK SC",
-    sans-serif;
-}
 
 /* The theme's Tailwind base styles set body/heading font-weight to 300 and
    body line-height to 1.5 (see al_folio_core assets/tailwind/app.css). That
