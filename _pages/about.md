@@ -18,8 +18,8 @@ social: true # includes social icons at the bottom of the page
 
 announcements:
   enabled: false
-  scrollable: true
-  limit: 5
+  scrollable: false
+  limit: 3
 
 latest_posts:
   enabled: false
@@ -30,18 +30,21 @@ latest_posts:
 {% include hero-carousel.liquid %}
 
 <div class="lang-en" markdown="1">
-The **BiPES Lab** (Beihang Integrated Power Electronics and Systems Lab) is established at the School of Integrated Circuit Science and Engineering, Beihang University (BUAA), led by Prof. Zhiguo Tong. We work on **power management integrated circuits and systems**, delivering high-performance power IC solutions for applications — data center computing, robotic electromechanical systems, and space/extreme-radiation environments — that demand the utmost in power conversion efficiency, power density, and reliability. We also explore AI-assisted power chip design (**AI for Power**), advancing the convergence of power electronics with intelligent design methods.
+The **BiPES Lab** (Beihang Integrated Power Electronics and Systems Lab) is based at the School of Integrated Circuit Science and Engineering, Beihang University. We focus on **power management integrated circuits and systems**, developing high-performance power IC solutions for data centers and other emerging applications. We also explore AI-assisted power chip design (**AI for Power**), advancing the integration of power chips and AI methods.
 
 </div>
 
 <div class="lang-zh" markdown="1">
-**北航集成功率电子与系统实验室（BiPES Lab）** 依托北京航空航天大学集成电路科学与工程学院组建。实验室专注于 **电源管理集成电路与系统** 研究，致力于为数据中心算力、机器人机电系统、空间及极端辐照环境等对电能变换效率、功率密度与可靠性有极致要求的场景，提供高性能电源芯片解决方案；同时探索以人工智能方法赋能电源芯片设计（**AI for Power**），推动电源电子技术与智能化设计方法的深度融合。
+**北航集成功率电子与系统实验室（BiPES Lab）** 依托北京航空航天大学集成电路科学与工程学院组建。实验室专注于 **电源管理集成电路与系统** 研究，致力于为数据中心等前沿应用提供高性能电源芯片解决方案；同时探索以人工智能方法赋能电源芯片设计（**AI for Power**），推动电源芯片与 AI 方法的深度融合。
 
 </div>
 
 <section id="news">
-  <h2><span class="lang-en">News</span><span class="lang-zh">新闻动态</span></h2>
-  {% include news.liquid %}
+  <div class="news-section-heading">
+    <h2><span class="lang-en">News</span><span class="lang-zh">新闻动态</span></h2>
+    <a href="{{ '/news/' | relative_url }}"><span class="lang-en">View all &rarr;</span><span class="lang-zh">查看更多 &rarr;</span></a>
+  </div>
+  {% include news.liquid limit=true %}
 </section>
 
 <section id="members">

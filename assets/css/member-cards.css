@@ -10,13 +10,26 @@
   font-size: 0.92rem;
 }
 
+/* A shorter portrait keeps the head visible while reducing empty torso space. */
+.profile img[src*="PI-Zhiguo"] {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: 50% 15%;
+}
+
 /* The bio's Education/Experience/Honors lists were long enough to run well
    past the photo's height, leaving a lot of empty space beside it. Collapsing
    each list to one middot-separated line (done at the content level) cut
    most of that; tightening the heading spacing here trims the rest. */
 .profile-bio h5 {
-  margin-top: 1.1rem;
-  margin-bottom: 0.3rem;
+  margin-top: 0.65rem;
+  margin-bottom: 0.15rem;
+}
+
+.profile-bio p {
+  margin-bottom: 0.5rem;
 }
 
 .member-group-heading {
@@ -58,6 +71,12 @@
    shot for. object-position's Y value is where the *image* anchors within
    the box: lower % crops more off the bottom (reveals more head/top),
    higher % crops more off the top (reveals more shoulders/bottom). */
+img.member-card-photo[src*="Member-Hanbin"],
+img.member-card-photo[src*="Member-Yangkun"] {
+  /* Keep the full head and space above it visible in the square card. */
+  object-position: 50% 0%;
+}
+
 img.member-card-photo[src*="Member-Peiyu"] {
   /* Portrait shot, default center crop sliced through mid-hair. Anchor near
      the top so the crop starts at the source's top edge instead. */
@@ -88,10 +107,29 @@ img.member-card-photo[src*="Member-Shenghang"] {
   width: 100%;
 }
 
-.member-card-name {
+.member-card-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
   margin: 0.75rem 0 0.15rem;
+}
+
+.member-card-heading .member-card-name {
+  margin: 0;
+  flex-shrink: 0;
   font-size: 1.05rem;
   font-weight: 700;
+}
+
+.member-card-role {
+  margin-left: auto;
+  text-align: right;
+  min-width: 0;
+}
+
+.member-card-role p {
+  line-height: 1.4;
 }
 
 .member-card .more-info,

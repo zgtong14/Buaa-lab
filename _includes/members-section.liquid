@@ -68,10 +68,12 @@
               {% assign profile_image_path = profile.image | prepend: 'assets/img/' %}
               {% include figure.liquid path=profile_image_path class="member-card-photo" sizes=grid_sizes alt=profile.name_en %}
             {% endif %}
-            <h4 class="member-card-name">
-              <span class="lang-en">{{ profile.name_en }}</span><span class="lang-zh">{{ profile.name_zh }}</span>
-            </h4>
-            {% if profile.more_info %}{{ profile.more_info }}{% endif %}
+            <div class="member-card-heading">
+              <h4 class="member-card-name">
+                <span class="lang-en">{{ profile.name_en }}</span><span class="lang-zh">{{ profile.name_zh }}</span>
+              </h4>
+              {% if profile.more_info %}<div class="member-card-role">{{ profile.more_info }}</div>{% endif %}
+            </div>
             {% if profile.research_en or profile.research_zh %}
               <p class="member-card-research">
                 <span class="lang-en"><strong>Research:</strong> {{ profile.research_en }}</span>

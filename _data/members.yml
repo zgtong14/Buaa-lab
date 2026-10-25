@@ -6,11 +6,6 @@
 # its own (3 per row on desktop) and a level with zero members simply doesn't
 # render its heading.
 #
-# `research_en`/`research_zh` show as a one-line research direction directly
-# on the grid card (below the role line) — kept short on purpose, since the
-# full write-up already lives in the member's own bio (`content`), reachable
-# via the card's "More info" disclosure.
-#
 # Photos live in assets/img/member/.
 
 - align: right
@@ -20,10 +15,8 @@
   name_zh: 童志国 教授
   content: members/member_tong.md
   image_circular: false
-  more_info: >
-    <p><span class='lang-en'>Principal Investigator</span><span class='lang-zh'>负责人</span></p>
   contact_links: >
-    <p><a href="mailto:zgtong@buaa.edu.cn">Email</a> &middot; <a href="https://scholar.google.com/citations?user=3_I6bksAAAAJ&hl=en">Google Scholar</a> &middot; <a href="https://www.researchgate.net/profile/Zhiguo-Tong/research">ResearchGate</a> &middot; <a href="https://shi.buaa.edu.cn/tongzhiguo/zh_CN/index.htm">BUAA Homepage</a></p>
+    <p><a href="mailto:zgtong@buaa.edu.cn">Email</a> &middot; <a href="https://scholar.google.com/citations?user=3_I6bksAAAAJ&hl=en">Google Scholar</a> &middot; <a href="https://shi.buaa.edu.cn/tongzhiguo/zh_CN/index.htm">BUAA Homepage</a></p>
 
 - level: phd
   image: member/Member-Hanbin.jpg
@@ -33,8 +26,6 @@
   image_circular: false
   more_info: >
     <p><span class='lang-en'>Ph.D. Student (2026– )</span><span class='lang-zh'>博士研究生（2026– ）</span></p>
-  research_en: Power management chip design, magnetically-coupled wireless power transfer.
-  research_zh: 电源管理芯片设计，磁耦合无线能量传输。
 
 - level: phd
   image: member/Member-Ziyao.jpg
@@ -44,8 +35,15 @@
   image_circular: false
   more_info: >
     <p><span class='lang-en'>Undergraduate Student (Senior, Incoming Ph.D.)</span><span class='lang-zh'>本科生（大四，博0）</span></p>
-  research_en: Data center power delivery chips — low-voltage, high-current multiphase converter modeling and design in BCMOS.
-  research_zh: 面向数据中心的供电芯片研究，聚焦 BCMOS 工艺低压大电流多相电路建模与设计。
+
+- level: phd
+  image: member/Member-Yangkun.jpg
+  name_en: Xu Yangkun
+  name_zh: 徐洋坤
+  content: members/member_yangkun.md
+  image_circular: false
+  more_info: >
+    <p><span class='lang-en'>Ph.D. Student</span><span class='lang-zh'>博士研究生</span></p>
 
 - level: msc
   image: member/Member-Yutong.jpg
@@ -55,19 +53,24 @@
   image_circular: false
   more_info: >
     <p><span class='lang-en'>M.Sc. Student</span><span class='lang-zh'>硕士研究生</span></p>
-  research_en: AI-assisted IC design and radiation-hardened circuit design.
-  research_zh: AI 辅助集成电路设计、抗辐射加固电路设计。
 
 - level: msc
-  image: member/Member-Kaixiang.jpg
-  name_en: Zhang Kaixiang
-  name_zh: 张凯翔
-  content: members/member_kaixiang.md
+  image: member/Member-Shuoguang.jpg
+  name_en: Ren Shuoguang
+  name_zh: 任烁光
+  content: members/member_shuoguang.md
   image_circular: false
   more_info: >
-    <p><span class='lang-en'>Incoming M.Sc. Student (2027– )</span><span class='lang-zh'>拟录取硕士研究生（2027– ）</span></p>
-  research_en: Power management chip design; power delivery for AI compute centers.
-  research_zh: 电源管理芯片设计、AI 算力中心供电。
+    <p><span class='lang-en'>Undergraduate Student (Senior, Incoming M.Sc.)</span><span class='lang-zh'>本科生（大四，研0）</span></p>
+
+- level: msc
+  image: member/Member-Tianyi.jpg
+  name_en: Li Tianyi
+  name_zh: 李天逸
+  content: members/member_tianyi.md
+  image_circular: false
+  more_info: >
+    <p><span class='lang-en'>M.Sc. Student</span><span class='lang-zh'>硕士研究生</span></p>
 
 - level: ug
   image: member/Member-Fanming.jpg
@@ -77,8 +80,6 @@
   image_circular: false
   more_info: >
     <p><span class='lang-en'>Undergraduate Student</span><span class='lang-zh'>本科生</span></p>
-  research_en: All-optical-driven gate driver and motor-drive chips for wide-bandgap semiconductors.
-  research_zh: 面向宽禁带半导体的全光驱动与电机驱动芯片。
 
 - level: ug
   image: member/Member-Peiyu.jpg
@@ -88,8 +89,6 @@
   image_circular: false
   more_info: >
     <p><span class='lang-en'>Undergraduate Student</span><span class='lang-zh'>本科生</span></p>
-  research_en: Highly-integrated motor-drive chips — robot joint and dexterous-hand motor drivers.
-  research_zh: 高集成度电机驱动芯片 —— 机器人关节电机驱动、机器人灵巧手电机芯片。
 
 - level: ug
   image: member/Member-Jiahao.jpg
@@ -99,8 +98,6 @@
   image_circular: false
   more_info: >
     <p><span class='lang-en'>Undergraduate Student</span><span class='lang-zh'>本科生</span></p>
-  research_en: AI-assisted power chip design.
-  research_zh: AI 辅助电源芯片设计。
 
 - level: ug
   image: member/Member-Zengyu.jpg
@@ -110,8 +107,6 @@
   image_circular: false
   more_info: >
     <p><span class='lang-en'>Undergraduate Student</span><span class='lang-zh'>本科生</span></p>
-  research_en: AI-assisted hybrid integrated circuit design.
-  research_zh: AI 辅助混合集成电路设计。
 
 - level: ug
   image: member/Member-Shenghang.jpg
@@ -121,8 +116,6 @@
   image_circular: false
   more_info: >
     <p><span class='lang-en'>Undergraduate Student</span><span class='lang-zh'>本科生</span></p>
-  research_en: Getting started with power management chip design.
-  research_zh: 正在学习电源管理相关方向。
 
 - level: ug
   image: member/Member-Hengli.jpg
@@ -132,5 +125,12 @@
   image_circular: false
   more_info: >
     <p><span class='lang-en'>Undergraduate Student</span><span class='lang-zh'>本科生</span></p>
-  research_en: Wide-bandgap semiconductor gate drive circuits.
-  research_zh: 宽禁带半导体驱动电路。
+
+- level: ug
+  image: member/Member-Zihan.jpg
+  name_en: Lin Zihan
+  name_zh: 林梓晗
+  content: members/member_zihan.md
+  image_circular: false
+  more_info: >
+    <p><span class='lang-en'>Undergraduate Student (Sophomore)</span><span class='lang-zh'>本科生（大二）</span></p>

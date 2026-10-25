@@ -21,5 +21,31 @@
 #projects,
 #publications,
 #join-us {
-  margin-top: 3.5rem;
+  margin-top: 1rem;
+}
+
+#news .news table {
+  margin-bottom: 0;
+}
+
+#news .news th,
+#news .news td {
+  padding-top: 0.35rem;
+  padding-bottom: 0.35rem;
+}
+
+.news-section-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.news-section-heading h2 {
+  margin-top: 0;
+}
+
+.news-section-heading > a {
+  flex-shrink: 0;
+  font-size: 0.95rem;
 }
