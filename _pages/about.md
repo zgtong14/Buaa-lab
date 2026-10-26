@@ -53,25 +53,25 @@ The **BiPES Lab** (Beihang Integrated Power Electronics and Systems Lab) is base
 </section>
 
 <section id="projects">
-  <h2><span class="lang-en">Selected Projects</span><span class="lang-zh">精选项目</span></h2>
-  {% include project-showcase.liquid %}
-  <p>
+  <div class="news-section-heading">
+    <h2><span class="lang-en">Selected Projects</span><span class="lang-zh">精选项目</span></h2>
     <a href="{{ '/project-showcase/' | relative_url }}">
       <span class="lang-en">See all projects &rarr;</span>
       <span class="lang-zh">查看全部项目 &rarr;</span>
     </a>
-  </p>
+  </div>
+  {% include project-showcase.liquid %}
 </section>
 
 <section id="publications">
-  <h2><span class="lang-en">Selected Publications</span><span class="lang-zh">精选论文</span></h2>
-  {% include selected_papers.liquid %}
-  <p>
+  <div class="news-section-heading">
+    <h2><span class="lang-en">Selected Publications</span><span class="lang-zh">精选论文</span></h2>
     <a href="{{ '/publications/' | relative_url }}">
       <span class="lang-en">See all publications &rarr;</span>
       <span class="lang-zh">查看全部论文 &rarr;</span>
     </a>
-  </p>
+  </div>
+  {% include selected_papers.liquid %}
 </section>
 
 <section id="join-us">

@@ -134,3 +134,12 @@
   image_circular: false
   more_info: >
     <p><span class='lang-en'>Undergraduate Student (Sophomore)</span><span class='lang-zh'>本科生（大二）</span></p>
+
+- level: ug
+  image: member/Member-Renming.jpg
+  name_en: Liu Renming
+  name_zh: 刘人铭
+  content: members/member_renming.md
+  image_circular: false
+  more_info: >
+    <p><span class='lang-en'>Undergraduate Student (Senior)</span><span class='lang-zh'>本科生（大四）</span></p>

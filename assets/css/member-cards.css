@@ -55,6 +55,35 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
+/* Smaller undergraduate cards: five columns on desktop, fewer on phones. */
+.member-grid.member-grid-undergraduates {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.member-grid-undergraduates > .col {
+  width: auto;
+  max-width: none;
+  min-width: 0;
+}
+
+.member-grid-undergraduates .member-card {
+  padding: 0.65rem;
+}
+
+@media (min-width: 768px) {
+  .member-grid.member-grid-undergraduates {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 359px) {
+  .member-grid.member-grid-undergraduates {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 .member-card > figure:has(img[src*="Member-Ziyao-2026"]) {
   aspect-ratio: 1 / 1;
   overflow: hidden;
@@ -85,6 +114,10 @@
 img.member-card-photo[src*="Member-Hanbin"],
 img.member-card-photo[src*="Member-Yangkun"] {
   /* Keep the full head and space above it visible in the square card. */
+  object-position: 50% 0%;
+}
+
+img.member-card-photo[src*="Member-Renming"] {
   object-position: 50% 0%;
 }
 
