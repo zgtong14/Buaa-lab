@@ -7,6 +7,11 @@
   display: none;
 }
 
+footer [id^="busuanzi_"],
+footer [id^="busuanzi_"] span {
+  color: #dedede !important;
+}
+
 html[data-lang="en"] .lang-zh {
   display: none;
 }
