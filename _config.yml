@@ -2,14 +2,14 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: /BiPES-lab # the website title (if blank, full name will be used instead)
+title: /IPES-lab # the website title (if blank, full name will be used instead)
 first_name: Zhiguo
 middle_name:
 last_name: Tong
 contact_note: >
   For collaboration, visiting, or graduate admission inquiries, please reach out by email.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Integrated Power Electronics and Systems (BiPES) Lab at Beihang University (BUAA), led by Dr. Zhiguo Tong.
+  Integrated Power Electronics and Systems (IPES) Lab at Beihang University (BUAA), led by Dr. Zhiguo Tong.
   Research focus: power management integrated circuits and systems.
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.

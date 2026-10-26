@@ -3,7 +3,7 @@ layout: page
 permalink: /research/
 title: research
 nav_title: "<span class='lang-en'>research</span><span class='lang-zh'>研究方向</span>"
-description: main research directions of the BUAA BiPES Lab
+description: main research directions of the BUAA IPES Lab
 nav: true
 nav_order: 2
 ---

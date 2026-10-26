@@ -4,7 +4,7 @@ title: about
 nav_title: "<span class='lang-en'>about</span><span class='lang-zh'>关于</span>"
 permalink: /
 title_zh: 北航集成功率电子与系统实验室
-title_en_full: Beihang Integrated Power Electronics and Systems (BiPES) Lab
+title_en_full: Beihang Integrated Power Electronics and Systems (IPES) Lab
 
 # No page.profile card here — the PI photo/contact info lives in the
 # #members section below (_data/members.yml + _includes/members/member_tong.md)
@@ -30,12 +30,12 @@ latest_posts:
 {% include hero-carousel.liquid %}
 
 <div class="lang-en" markdown="1">
-The **BiPES Lab** (Beihang Integrated Power Electronics and Systems Lab) is based at the School of Integrated Circuit Science and Engineering, Beihang University. We focus on **power management integrated circuits and systems**, developing high-performance power IC solutions for data centers and other emerging applications. We also explore AI-assisted power chip design (**AI for Power**), advancing the integration of power chips and AI methods.
+The **IPES Lab** (Beihang Integrated Power Electronics and Systems Lab) is based at the School of Integrated Circuit Science and Engineering, Beihang University. We focus on **power management integrated circuits and systems**, developing high-performance power IC solutions for data centers and other emerging applications. We also explore AI-assisted power chip design (**AI for Power**), advancing the integration of power chips and AI methods.
 
 </div>
 
 <div class="lang-zh" markdown="1">
-**北航集成功率电子与系统实验室（BiPES Lab）** 依托北京航空航天大学集成电路科学与工程学院组建。实验室专注于 **电源管理集成电路与系统** 研究，致力于为数据中心等前沿应用提供高性能电源芯片解决方案；同时探索以人工智能方法赋能电源芯片设计（**AI for Power**），推动电源芯片与 AI 方法的深度融合。
+**北航集成功率电子与系统实验室（IPES Lab）** 依托北京航空航天大学集成电路科学与工程学院组建。实验室专注于 **电源管理集成电路与系统** 研究，致力于为数据中心等前沿应用提供高性能电源芯片解决方案；同时探索以人工智能方法赋能电源芯片设计（**AI for Power**），推动电源芯片与 AI 方法的深度融合。
 
 </div>
 
