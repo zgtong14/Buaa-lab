@@ -38,3 +38,12 @@
 .proj-media .caption {
   font-size: 1rem;
 }
+
+/* Keep project headings close to the top edge of their cards. */
+.card-body.project-card-body {
+  padding-top: 0.5rem;
+}
+
+.project-card-body .proj-text > h4 {
+  margin-top: 0 !important;
+}
