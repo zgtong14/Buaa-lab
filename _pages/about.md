@@ -1,7 +1,7 @@
 ---
 layout: about
-title: about
-nav_title: "<span class='lang-en'>about</span><span class='lang-zh'>关于</span>"
+title: About
+nav_title: "<span class='lang-en'>About</span><span class='lang-zh'>关于</span>"
 permalink: /
 title_zh: 北航集成功率电子与系统实验室
 title_en_full: Beihang Integrated Power Electronics and Systems (IPES) Lab

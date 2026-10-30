@@ -1,8 +1,8 @@
 ---
 layout: page
 permalink: /project-showcase/
-title: projects
-nav_title: "<span class='lang-en'>projects</span><span class='lang-zh'>项目展示</span>"
+title: Projects
+nav_title: "<span class='lang-en'>Projects</span><span class='lang-zh'>项目展示</span>"
 description: recent research projects from the BUAA IPES Lab
 nav: true
 nav_order: 4

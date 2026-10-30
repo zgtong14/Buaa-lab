@@ -34,7 +34,7 @@
   content: members/member_ziyao.md
   image_circular: false
   more_info: >
-    <p><span class='lang-en'>Undergraduate Student (Senior, Incoming Ph.D.)</span><span class='lang-zh'>本科生（大四，博0）</span></p>
+    <p><span class='lang-en'>Ph.D. Student (2027– )</span><span class='lang-zh'>博士研究生（2027– ）</span></p>
 
 - level: phd
   image: member/Member-Yangkun.jpg
@@ -43,7 +43,7 @@
   content: members/member_yangkun.md
   image_circular: false
   more_info: >
-    <p><span class='lang-en'>Ph.D. Student</span><span class='lang-zh'>博士研究生</span></p>
+    <p><span class='lang-en'>Ph.D. Student (2027– )</span><span class='lang-zh'>博士研究生（2027– ）</span></p>
 
 - level: msc
   image: member/Member-Yutong.jpg
@@ -52,7 +52,7 @@
   content: members/member_yutong.md
   image_circular: false
   more_info: >
-    <p><span class='lang-en'>M.Sc. Student</span><span class='lang-zh'>硕士研究生</span></p>
+    <p><span class='lang-en'>M.Sc. Student (2026– )</span><span class='lang-zh'>硕士研究生（2026– ）</span></p>
 
 - level: msc
   image: member/Member-Shuoguang.jpg
@@ -61,7 +61,7 @@
   content: members/member_shuoguang.md
   image_circular: false
   more_info: >
-    <p><span class='lang-en'>Undergraduate Student (Senior, Incoming M.Sc.)</span><span class='lang-zh'>本科生（大四，研0）</span></p>
+    <p><span class='lang-en'>M.Sc. Student (2027– )</span><span class='lang-zh'>硕士研究生（2027– ）</span></p>
 
 - level: msc
   image: member/Member-Tianyi.jpg
@@ -70,7 +70,7 @@
   content: members/member_tianyi.md
   image_circular: false
   more_info: >
-    <p><span class='lang-en'>M.Sc. Student</span><span class='lang-zh'>硕士研究生</span></p>
+    <p><span class='lang-en'>M.Sc. Student (2027– )</span><span class='lang-zh'>硕士研究生（2027– ）</span></p>
 
 - level: ug
   image: member/Member-Fanming.jpg
@@ -133,7 +133,7 @@
   content: members/member_zihan.md
   image_circular: false
   more_info: >
-    <p><span class='lang-en'>Undergraduate Student (Sophomore)</span><span class='lang-zh'>本科生（大二）</span></p>
+    <p><span class='lang-en'>Undergraduate Student</span><span class='lang-zh'>本科生</span></p>
 
 - level: ug
   image: member/Member-Renming.jpg
@@ -142,4 +142,4 @@
   content: members/member_renming.md
   image_circular: false
   more_info: >
-    <p><span class='lang-en'>Undergraduate Student (Senior)</span><span class='lang-zh'>本科生（大四）</span></p>
+    <p><span class='lang-en'>Undergraduate Student</span><span class='lang-zh'>本科生</span></p>
