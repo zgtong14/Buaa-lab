@@ -26,7 +26,7 @@
               src="{{ site.data.venues[entry.abbr].logo | relative_url }}"
               alt="{{ entry.abbr }} logo"
               class="venue-logo img-fluid mt-2"
-            />
+            >
           {% endif %}
         {% else %}
           <abbr class="badge rounded w-100">{{ entry.abbr }}</abbr>
@@ -404,7 +404,7 @@
       <div class="bibtex hidden">
         {% highlight bibtex %}
         {{- entry.bibtex | hideCustomBibtex -}}
-      {% endhighlight %}
+        {% endhighlight %}
       </div>
     {% endif %}
 

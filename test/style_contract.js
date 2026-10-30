@@ -75,6 +75,7 @@ if (/gem 'al_math',\s*:git =>/.test(gemfile)) {
 // landing in these directories by accident.
 const KNOWN_LOCAL_OVERRIDES = new Set([
   "_includes/header.liquid",
+  "_includes/hero-carousel.liquid",
   "_layouts/bib.liquid",
   "_layouts/about.liquid",
   "_includes/members-section.liquid",
@@ -84,6 +85,19 @@ const KNOWN_LOCAL_OVERRIDES = new Set([
   "_includes/members/member_tong.md",
   "_includes/members/member_hanbin.md",
   "_includes/members/member_yutong.md",
+  "_includes/members/member_fanming.md",
+  "_includes/members/member_hengli.md",
+  "_includes/members/member_jiahao.md",
+  "_includes/members/member_kaixiang.md",
+  "_includes/members/member_peiyu.md",
+  "_includes/members/member_renming.md",
+  "_includes/members/member_shenghang.md",
+  "_includes/members/member_shuoguang.md",
+  "_includes/members/member_tianyi.md",
+  "_includes/members/member_yangkun.md",
+  "_includes/members/member_zengyu.md",
+  "_includes/members/member_zihan.md",
+  "_includes/members/member_ziyao.md",
 ]);
 
 for (const forbiddenPath of ["_includes", "_layouts", "_sass", "_scripts", "assets/tailwind", "tailwind.config.js", "assets/webfonts"]) {
@@ -97,7 +111,7 @@ for (const forbiddenPath of ["_includes", "_layouts", "_sass", "_scripts", "asse
   }
   const walk = (dir) =>
     fs.readdirSync(path.join(root, dir), { withFileTypes: true }).flatMap((entry) => {
-      const relPath = path.join(dir, entry.name);
+      const relPath = path.posix.join(dir, entry.name);
       return entry.isDirectory() ? walk(relPath) : [relPath];
     });
   for (const relPath of walk(forbiddenPath)) {

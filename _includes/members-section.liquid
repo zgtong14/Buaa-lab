@@ -72,7 +72,9 @@
               <h4 class="member-card-name">
                 <span class="lang-en">{{ profile.name_en }}</span><span class="lang-zh">{{ profile.name_zh }}</span>
               </h4>
-              {% if profile.more_info %}<div class="member-card-role">{{ profile.more_info }}</div>{% endif %}
+              {% if profile.more_info %}
+                <div class="member-card-role">{{ profile.more_info }}</div>
+              {% endif %}
             </div>
             {% if profile.research_en or profile.research_zh %}
               <p class="member-card-research">

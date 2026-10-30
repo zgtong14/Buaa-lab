@@ -5,6 +5,7 @@
 - Undergraduate background in Integrated Circuit Design and Integrated Systems, School of Integrated Circuits (School of Microelectronics), Northwestern Polytechnical University.
 
 ##### Research Experience
+
 {: #yangkun-research }
 
 - Analog IC design, including a low-noise, high-input-impedance analog front end for wearable devices.
@@ -12,6 +13,7 @@
 - Experience with Cadence Virtuoso for schematic design, simulation and layout; Verilog, ModelSim, Synopsys synthesis and Vivado for digital circuit and FPGA design; and two-dimensional material preparation and transfer.
 
 ##### Selected Honors
+
 {: #yangkun-honors }
 
 - Provincial First Prize, Shaanxi Challenge Cup College Student Entrepreneurship Plan Competition (2026).
@@ -27,6 +29,7 @@
 - 本科专业为集成电路设计与集成系统，就读于西北工业大学集成电路学院（微电子学院）。
 
 ##### 科研经历与技能
+
 {: #yangkun-research-zh }
 
 - 研究兴趣为模拟集成电路设计，具有面向可穿戴设备的低噪声、高输入阻抗模拟前端设计经验。
@@ -34,6 +37,7 @@
 - 熟悉 Cadence Virtuoso 模拟电路原理图设计、仿真与版图流程；掌握 Verilog、ModelSim、Synopsys 综合及 Vivado FPGA 设计，并具有二维材料制备与转移实验经验。
 
 ##### 代表性获奖
+
 {: #yangkun-honors-zh }
 
 - 第十三届挑战杯陕汽集团大学生创业计划竞赛，省级一等奖（2026）。
