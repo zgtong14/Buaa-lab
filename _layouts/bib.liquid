@@ -5,31 +5,13 @@
     <div class="col col-sm-2 abbr">
       {%- if entry.abbr -%}
         {%- if site.data.venues[entry.abbr] -%}
-          {% assign venue_style = null %}
-          {% if site.data.venues[entry.abbr].color != blank %}
-            {% assign venue_style = site.data.venues[entry.abbr].color | prepend: 'style="background-color:' | append: '"' %}
-          {%- endif -%}
-          <abbr
-            class="badge rounded w-100"
-            {% if venue_style %}
-              {{ venue_style }}
-            {% endif -%}
-          >
-            {% if site.data.venues[entry.abbr].url %}
-              <a href="{{ site.data.venues[entry.abbr].url }}">{{ entry.abbr }}</a>
-            {% else %}
-              <div>{{- entry.abbr -}}</div>
-            {% endif %}
-          </abbr>
           {% if site.data.venues[entry.abbr].logo %}
             <img
               src="{{ site.data.venues[entry.abbr].logo | relative_url }}"
               alt="{{ entry.abbr }} logo"
-              class="venue-logo img-fluid mt-2"
+              class="venue-logo img-fluid"
             >
           {% endif %}
-        {% else %}
-          <abbr class="badge rounded w-100">{{ entry.abbr }}</abbr>
         {% endif %}
       {% endif %}
       {% if entry.preview %}
@@ -174,10 +156,13 @@
     <!-- Journal/Book title and date -->
     {% assign proceedings = 'inproceedings,incollection' | split: ',' %}
     {% assign thesis = 'thesis,mastersthesis,phdthesis' | split: ',' %}
+    {% assign venue_suffix = entry.abbr | prepend: ' (' | append: ')' %}
+    {% capture venue_date %}{% if entry.abbr %} <strong>({{ entry.abbr }}{% if entry.year %} {{ entry.year }}{% endif %})</strong>{% endif %}{% endcapture %}
     {% if entry.type == 'article' %}
-      {% capture entrytype %}<em>{{ entry.journal }}</em>{% endcapture %}
+      {% capture entrytype %}<em>{{ entry.journal | remove: venue_suffix }}{{ venue_date }}</em>{% endcapture %}
     {% elsif proceedings contains entry.type %}
-      {% capture entrytype %}<em>In {{ entry.booktitle }}</em>{% endcapture %}
+      {% assign conference_name = entry.booktitle | remove: venue_suffix | regex_replace: '\s*\([^)]*\)\s*$', '' %}
+      {% capture entrytype %}<em>In {{ conference_name }}{{ venue_date }}</em>{% endcapture %}
     {% elsif thesis contains entry.type %}
       {% capture entrytype %}<em>{{ entry.school }}</em>{% endcapture %}
     {% else %}
@@ -188,7 +173,13 @@
       {% capture entrymonth %}{{ " " }}{{ entry.month | capitalize }}{% endcapture %}
     {% endif %}
     {% assign entryyear = '' %}
-    {% if entry.year %}
+    {% assign dated_venue = false %}
+    {% if entry.abbr %}
+      {% if entry.type == 'article' or proceedings contains entry.type %}
+        {% assign dated_venue = true %}
+      {% endif %}
+    {% endif %}
+    {% if entry.year and dated_venue == false %}
       {% capture entryyear %}{{ " " }}{{ entry.year }}{% endcapture %}
     {% endif %}
     {% if entry.location %}

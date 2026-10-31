@@ -24,21 +24,32 @@
 
 "ISCAS":
   url: https://ieee-iscas.org/
+  logo: /assets/img/venues/iscas.png
 
 "OJSSCS":
   url: https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8782712
+  logo: /assets/img/venues/ojsscs.jpg
 
 "ICTA":
   url: https://ieeexplore.ieee.org/xpl/conhome/1802429/all-proceedings
+  logo: /assets/img/venues/icta.png
 
 "TCAS-I":
   url: https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8919
+  logo: /assets/img/venues/tcas-i.jpg
 
 "TPEL":
   url: https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=63
+  logo: /assets/img/venues/tpel.jpg
 
 "A-SSCC":
   url: https://a-sscc.org/
+  logo: /assets/img/venues/a-sscc.png
 
 "ICSICT":
   url: https://ieeexplore.ieee.org/xpl/conhome/1000922/all-proceedings
+  logo: /assets/img/venues/icsict.png
+
+"J. Semicond.":
+  url: https://jos.ac.cn/
+  logo: /assets/img/venues/jos.jpg

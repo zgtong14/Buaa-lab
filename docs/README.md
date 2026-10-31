@@ -4,6 +4,7 @@ These guides cover the `al-folio` v1.x starter and its pluginized runtime.
 
 ## User Guides
 
+- [Google Scholar 自动同步](SCHOLAR_SYNC.md): 自动追加新论文、部署与失败恢复。
 - [Quick Start](QUICKSTART.md): create a site from the template and get it live quickly.
 - [Installing and Deploying](INSTALL.md): Docker, local setup, GitHub Pages, Netlify, and upgrade guidance.
 - [Customizing](CUSTOMIZE.md): content, CVs, publications, layouts, local overrides, and feature configuration.
