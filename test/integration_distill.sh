@@ -2,6 +2,10 @@
 set -euo pipefail
 
 tmp_dir="$(mktemp -d)"
+# Native Windows Ruby needs a drive-qualified path inside comma-separated configs.
+if command -v cygpath >/dev/null 2>&1; then
+  tmp_dir="$(cygpath -m "${tmp_dir}")"
+fi
 tmp_override="${tmp_dir}/distill-override.yml"
 tmp_site="${tmp_dir}/site"
 
@@ -9,6 +13,8 @@ cleanup() {
   rm -rf "${tmp_dir}"
 }
 trap cleanup EXIT
+
+fixture_source="$(ruby test/integration_fixture_source.rb "${tmp_dir}")"
 
 cat >"${tmp_override}" <<'YAML'
 giscus:
@@ -18,7 +24,7 @@ giscus:
   category_id: DIC_kwDOExample
 YAML
 
-bundle exec jekyll build --config "_config.yml,${tmp_override}" -d "${tmp_site}" >/dev/null
+bundle exec jekyll build --source "${fixture_source}" --config "_config.yml,${tmp_override}" -d "${tmp_site}" >/dev/null
 
 distill_page="${tmp_site}/blog/2021/distill/index.html"
 

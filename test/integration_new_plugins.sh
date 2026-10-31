@@ -8,16 +8,22 @@
 set -euo pipefail
 
 tmp_dir="$(mktemp -d)"
+# Native Windows Ruby needs a drive-qualified path inside comma-separated configs.
+if command -v cygpath >/dev/null 2>&1; then
+  tmp_dir="$(cygpath -m "${tmp_dir}")"
+fi
 cleanup() {
   rm -rf "${tmp_dir}"
 }
 trap cleanup EXIT
 
+fixture_source="$(ruby test/integration_fixture_source.rb "${tmp_dir}")"
+
 build() {
   local name="$1"
   shift
   local out="${tmp_dir}/site-${name}"
-  bundle exec jekyll build "$@" -d "${out}" >/dev/null
+  bundle exec jekyll build --source "${fixture_source}" --config _config.yml "$@" -d "${out}" >/dev/null
   echo "${out}"
 }
 
